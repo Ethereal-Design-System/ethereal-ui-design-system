@@ -1,0 +1,25 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "strict": true,
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "noEmit": false,
+    "rootDir": ".",
+    "outDir": "./dist",
+    "types": ["jest"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "**/__tests__/*",
+    "src/app/**/*",
+    "**/*.test",
+    "**/*.spec",
+    ".rnstorybook"
+  ]
+}
