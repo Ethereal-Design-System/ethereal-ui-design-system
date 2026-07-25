@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-native';
-import { View } from 'react-native';
+import { View, Alert, Platform } from 'react-native';
 import { Button } from '../../src/components/Button';
 
 const ButtonMeta: Meta<typeof Button> = {
@@ -49,6 +49,8 @@ type Story = StoryObj<typeof Button>;
 export const Filled: Story = {
   args: {
     variant: 'filled',
+    onPress: () =>
+      Platform.OS === 'web' ? alert('press') : Alert.alert('press'),
   },
 };
 
@@ -61,5 +63,12 @@ export const Outlined: Story = {
 export const Link: Story = {
   args: {
     variant: 'link',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    variant: 'link',
+    disabled: true,
   },
 };
