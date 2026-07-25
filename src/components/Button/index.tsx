@@ -56,6 +56,7 @@ export const Button: React.FC<IButton> = ({
 
   return (
     <Pressable
+      testID="button"
       disabled={disabled}
       style={[
         buttonRootBaseStyles,
