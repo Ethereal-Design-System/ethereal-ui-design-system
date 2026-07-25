@@ -51,7 +51,7 @@ export const buttonRootVariantsStyles: TButtonVariants = {
       color: colors.neutral[0],
     },
     focus: {
-      borderColor: colors.brand.primary[500],
+      borderColor: colors.brand.primary[400],
       borderWidth: 2,
 
       backgroundColor: colors.neutral[0],
