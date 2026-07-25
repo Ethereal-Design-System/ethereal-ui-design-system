@@ -26,6 +26,10 @@ export default CardMeta;
 
 type Story = StoryObj<typeof Card.Root>;
 
+export const Root: Story = {
+  render: () => <Card.Root></Card.Root>,
+};
+
 export const Title: Story = {
   render: () => <Card.Title>Título do Card</Card.Title>,
 };
@@ -42,7 +46,7 @@ export const Paragraph: Story = {
 export const UnifiedCompositions: Story = {
   render: () => (
     <Card.Root>
-      <Card.Title>Composição Unificada testet tet</Card.Title>
+      <Card.Title>Composição Unificada</Card.Title>
       <Card.Paragraph>
         Esta é a composição completa do componente Card, unindo o título e o
         parágrafo dentro da estrutura principal Card.Root.
