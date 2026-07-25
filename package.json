@@ -1,6 +1,6 @@
 {
   "name": "@ethereal-design/ui-design-system",
-  "main": "dist/index.js",
+  "main": "expo-router/entry",
   "version": "0.0.0",
   "dependencies": {
     "@babel/core": "^7.29.7",
@@ -35,6 +35,11 @@
     "react-native-web": "~0.21.0",
     "react-native-worklets": "0.8.3"
   },
+  "overrides": {
+    "@testing-library/react-native": {
+      "react": "$react"
+    }
+  },
   "devDependencies": {
     "@changesets/cli": "^2.31.1",
     "@commitlint/cli": "^20.5.3",
@@ -44,6 +49,7 @@
     "@storybook/addon-ondevice-controls": "^10.4.6",
     "@storybook/react-native": "^10.4.6",
     "@storybook/react-native-ui-lite": "^10.4.6",
+    "@testing-library/react-native": "^13.3.3",
     "@types/jest": "29.5.14",
     "@types/react": "~19.2.2",
     "cross-env": "^10.1.0",
