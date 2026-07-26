@@ -28,6 +28,10 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Run all tests
+        run: npm run test
+
       - name: Changeset Action (Version and Publication)
         id: changesets
         uses: changesets/action@v1
