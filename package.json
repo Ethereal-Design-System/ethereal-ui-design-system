@@ -67,7 +67,8 @@
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "test": "jest --watchAll",
+    "test": "jest --watchAll=false",
+    "test:watch": "jest --watchAll",
     "set-storybook-main": "cross-env EXPO_PUBLIC_STORYBOOK=true node scripts/set-package-json-main.js",
     "lint": "expo lint",
     "lint:fix": "npx expo lint --fix",
