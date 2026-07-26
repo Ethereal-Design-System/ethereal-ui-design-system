@@ -81,7 +81,8 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish",
-    "version-check": "changeset status --since=origin/develop"
+    "version-check": "changeset status --since=origin/develop",
+    "changeset:empty": "npx changeset add --empty"
   },
   "files": [
     "dist",
