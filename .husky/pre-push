@@ -1,5 +1,13 @@
 #!/usr/bin/env sh
 
+echo "🔄 Validating types and search errors..."
 npm run typecheck
-npm run test
+
+echo "🆕 Fetching latest develop branch to compare changes..."
+git fetch origin develop:develop
+
+echo "🧪 Running Jest on modified files since develop..."
+npx jest --changedSince=develop --passWithNoTests
+
+echo "🦋 Seaching for changeset file..."
 npm run version-check

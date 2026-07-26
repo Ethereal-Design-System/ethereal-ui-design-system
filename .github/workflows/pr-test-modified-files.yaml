@@ -1,0 +1,26 @@
+name: PR Test Modified Files
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.BOT_GITHUB_TOKEN }}
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup-enviroment
+
+      - name: Fetch base branch
+        run: git fetch origin ${{ github.base_ref }}:${{ github.base_ref }}
+
+      - name: Run tests for changed files
+        run: npx jest --changedSince=${{ github.base_ref }} --passWithNoTests

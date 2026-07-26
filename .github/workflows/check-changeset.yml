@@ -19,16 +19,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.BOT_GITHUB_TOKEN }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Install Dependencies
-        run: npm install
-
+          token: ${{ secrets.BOT_GITHUB_TOKEN  }}
+      - name: Setup Environment
+        uses: ./.github/actions/setup-enviroment
       - name: Validate the existence of Changeset
-
         run: npx changeset status --since=origin/develop
