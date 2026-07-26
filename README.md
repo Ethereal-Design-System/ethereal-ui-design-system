@@ -49,7 +49,8 @@ Abaixo está a listagem completa dos scripts configurados no projeto e suas resp
 | `npm run storybook:web`      | Configura o ponto de entrada e inicia o Storybook na Web via Expo.                                                                                        |
 | `npm run storybook:android`  | Configura o ponto de entrada e inicia o Storybook no Android via Expo.                                                                                    |
 | `npm run storybook:ios`      | Configura o ponto de entrada e inicia o Storybook no iOS via Expo.                                                                                        |
-| `npm run test`               | Executa os testes automatizados com Jest em modo de observação contínua (`--watchAll`).                                                                   |
+| `npm run test`               | Executa os testes automatizados.                                                                                                                          |
+| `npm run test:watch`         | Executa os testes automatizados com Jest em modo de observação contínua (`--watchAll`)                                                                    |
 | `npm run lint`               | Executa a verificação estática do código usando as regras de lint do Expo.                                                                                |
 | `npm run lint:fix`           | Tenta corrigir automaticamente os problemas de lint encontrados.                                                                                          |
 | `npm run format`             | Formata todo o código do projeto utilizando o Prettier.                                                                                                   |
@@ -57,6 +58,6 @@ Abaixo está a listagem completa dos scripts configurados no projeto e suas resp
 | `npm run set-storybook-main` | Permite alternar o dinamicamente ponto de entrada (`main`) do `package.json` para o modo Storybook.                                                       |
 | `npm run prepare`            | Realiza a incialização automática do Husky para gerenciamento de Git Hooks.                                                                               |
 | `npm run changeset`          | Inicia o fluxo interativo para documentar novas alterações no código e determinar o nível da próxima versão semântica (patch, minor ou major).            |
+| `npm run changeset:empty`    | Gera um changeset vazio. Use **exclusivamente** para alterações que não impactam o usuário final (ex: documentação, CI/CD, refatorações).                 |
 | `npm run version-packages`   | Consome os changesets pendentes, atualiza as versões no `package.json` e gera as entradas automáticas no `CHANGELOG.md`.                                  |
 | `npm run version-check`      | Verifica o status atual das alterações e lista quais arquivos precisam de versionamento desde a branch `develop`. Útil para validação em pipelines de CI. |
-|                              |
