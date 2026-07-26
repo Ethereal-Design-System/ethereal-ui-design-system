@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Environment
-        uses: ./.github/actions/setup-enviroment
+        uses: ./.github/actions/setup-enviroment/action.yml
         with:
           custom_token: ${{ secrets.BOT_GITHUB_TOKEN }}
 
