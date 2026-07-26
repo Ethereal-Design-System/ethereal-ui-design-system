@@ -15,19 +15,10 @@ jobs:
     name: Verify Changelog File
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - name: Setup Environment
+        uses: ./.github/actions/setup-enviroment
         with:
-          fetch-depth: 0
-          token: ${{ secrets.BOT_GITHUB_TOKEN }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Install Dependencies
-        run: npm install
+          custom_token: ${{ secrets.BOT_GITHUB_TOKEN }}
 
       - name: Validate the existence of Changeset
 

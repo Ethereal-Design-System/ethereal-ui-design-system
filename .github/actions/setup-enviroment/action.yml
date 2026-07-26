@@ -1,0 +1,26 @@
+name: 'Setup Environment'
+description: 'Do repository checkout, configure the Node version and install the dependencies'
+
+inputs:
+  custom_token:
+    description: 'Custom GitHub for the checkout'
+    required: false
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ inputs.custom_token != '' && inputs.custom_token || github.token }}
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: 'npm'
+
+    - name: Install dependencies
+      shell: bash
+      run: npm install
