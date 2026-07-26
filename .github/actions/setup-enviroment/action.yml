@@ -1,5 +1,5 @@
 name: 'Setup Environment'
-description: 'Do repository checkout, configure the Node version and install the dependencies'
+description: 'Configure the Node version and install the dependencies'
 
 inputs:
   custom_token:
@@ -9,12 +9,6 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-        token: ${{ inputs.custom_token != '' && inputs.custom_token || github.token }}
-
     - name: Setup Node
       uses: actions/setup-node@v4
       with:
