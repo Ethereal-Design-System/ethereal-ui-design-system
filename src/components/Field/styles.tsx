@@ -1,7 +1,10 @@
+import { formFontSizeVariants } from '@/common/variants';
 import { tokens } from '@/tokens';
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
-const { spacing, fontFamily, fontSize, lineHeight, colors } = tokens;
+const { spacing, fontFamily, colors, fontSize } = tokens;
+
+const isWebPlatform = Platform.OS === 'web';
 
 export const fieldStyles = StyleSheet.create({
   root: {
@@ -11,13 +14,13 @@ export const fieldStyles = StyleSheet.create({
   },
   text: {
     color: colors.brand.secondary[900],
-    fontSize: fontSize.base,
-    lineHeight: lineHeight.base,
+    ...formFontSizeVariants,
   },
   label: {
     fontFamily: fontFamily.body[500],
   },
   message: {
-    fontFamily: fontFamily.body[400],
+    fontFamily: fontFamily.body[isWebPlatform ? 400 : 500],
+    fontSize: isWebPlatform ? fontSize.xs : fontSize.base,
   },
 });
