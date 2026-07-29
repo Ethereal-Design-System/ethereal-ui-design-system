@@ -1,10 +1,9 @@
+import { IS_WEB_PLATFORM } from '@/common/constants';
 import { formFontSizeVariants } from '@/common/variants';
 import { tokens } from '@/tokens';
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const { spacing, fontFamily, colors, fontSize } = tokens;
-
-const isWebPlatform = Platform.OS === 'web';
 
 export const fieldStyles = StyleSheet.create({
   root: {
@@ -20,7 +19,7 @@ export const fieldStyles = StyleSheet.create({
     fontFamily: fontFamily.body[500],
   },
   message: {
-    fontFamily: fontFamily.body[isWebPlatform ? 400 : 500],
-    fontSize: isWebPlatform ? fontSize.xs : fontSize.base,
+    fontFamily: fontFamily.body[IS_WEB_PLATFORM ? 400 : 500],
+    fontSize: IS_WEB_PLATFORM ? fontSize.xs : fontSize.base,
   },
 });
