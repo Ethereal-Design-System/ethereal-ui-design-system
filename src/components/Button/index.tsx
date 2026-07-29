@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Platform, Pressable, Text } from 'react-native';
+import { Pressable, Text } from 'react-native';
 import { IButton, TButtonStates, TButtonStyleProps } from './types';
 import {
   buttonRootBaseStyles,
@@ -7,6 +7,7 @@ import {
   buttonTextBaseStyles,
   buttonTextStyles,
 } from './variants';
+import { IS_WEB_PLATFORM } from '@/common/constants';
 
 export const Button: React.FC<IButton> = ({
   children,
@@ -31,7 +32,6 @@ export const Button: React.FC<IButton> = ({
   const [isFocused, setIsFocused] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const isWebPlatform = Platform.OS === 'web';
   const styleRootVariant = buttonRootVariantsStyles[variant];
   const styleTextVariant = buttonTextStyles[variant];
 
@@ -71,7 +71,7 @@ export const Button: React.FC<IButton> = ({
         selected: isPressed || isActive,
       }}
       focusable={focusable}
-      {...(isWebPlatform && {
+      {...(IS_WEB_PLATFORM && {
         onHoverIn: (event) => {
           setIsHovered(true);
           onHoverIn?.(event);
