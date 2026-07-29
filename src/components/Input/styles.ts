@@ -9,9 +9,11 @@ export const inputStyles = StyleSheet.create({
     borderWidth: 1,
     ...formFontSizeVariants,
     padding: spacing.sm,
+    borderColor: colors.neutral[900],
     borderRadius: borderRadius.sm,
     fontFamily: fontFamily.body[400],
     backgroundColor: colors.neutral[0],
     color: colors.brand.secondary[900],
+    placeholderTextColor: colors.neutral[500],
   } as TextStyle,
 });
