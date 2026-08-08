@@ -1,6 +1,6 @@
 {
   "name": "@ethereal-design/ui-design-system",
-  "main": "expo-router/entry",
+  "main": "dist/index.js",
   "version": "0.0.0",
   "dependencies": {
     "@babel/core": "^7.29.7",
@@ -87,7 +87,10 @@
   "files": [
     "dist",
     "src",
-    "!src/app"
+    "!src/app",
+    "!src/__tests__",
+    "!src/**/**/*.test",
+    "!src/**/**/*.spec"
   ],
   "jest": {
     "preset": "jest-expo"
