@@ -11,6 +11,10 @@ export const loadingCircleVariants = {
     bg: colors.neutral[0],
     progress: colors.neutral[300],
   },
+  cherry: {
+    bg: colors.neutral[0],
+    progress: colors.feedback.error.base,
+  },
 };
 
 export type TLoadingCircleVariant = keyof typeof loadingCircleVariants;

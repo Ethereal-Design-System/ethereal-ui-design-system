@@ -9,7 +9,7 @@ const LoadingCircleMeta: Meta<typeof LoadingCircle> = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['olive', 'cappuccino'],
+      options: ['olive', 'cappuccino', 'cherry'],
       description: 'Variante de cor do indicador de carregamento',
     },
     size: {
@@ -62,6 +62,12 @@ export const Olive: Story = {
 export const cappuccino: Story = {
   args: {
     variant: 'cappuccino',
+  },
+};
+
+export const cherry: Story = {
+  args: {
+    variant: 'cherry',
   },
 };
 
