@@ -1,0 +1,108 @@
+{
+  "name": "@ethereal-design/ui-design-system",
+  "main": "dist/index.js",
+  "version": "0.0.0",
+  "dependencies": {
+    "@babel/core": "^7.29.7",
+    "@ethereal-design/ui-design-tokens": "^0.1.0",
+    "@expo-google-fonts/jomhuria": "^0.4.0",
+    "@expo-google-fonts/jost": "^0.4.2",
+    "@expo/ui": "~56.0.17",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "babel-loader": "8.4.1",
+    "expo": "~56.0.11",
+    "expo-constants": "~56.0.18",
+    "expo-device": "~56.0.4",
+    "expo-font": "~56.0.6",
+    "expo-glass-effect": "~56.0.4",
+    "expo-image": "~56.0.11",
+    "expo-linking": "~56.0.14",
+    "expo-router": "~56.2.10",
+    "expo-secure-store": "^56.0.4",
+    "expo-splash-screen": "~56.0.10",
+    "expo-status-bar": "~56.0.4",
+    "expo-symbols": "~56.0.6",
+    "expo-system-ui": "~56.0.5",
+    "expo-web-browser": "~56.0.5",
+    "moti": "^0.30.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.85.3",
+    "react-native-gesture-handler": "~2.31.1",
+    "react-native-reanimated": "4.3.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "4.25.2",
+    "react-native-web": "~0.21.0",
+    "react-native-worklets": "0.8.3"
+  },
+  "overrides": {
+    "@testing-library/react-native": {
+      "react": "$react"
+    }
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.31.1",
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
+    "@react-native/jest-preset": "^0.85.3",
+    "@storybook/addon-ondevice-actions": "^10.4.4",
+    "@storybook/addon-ondevice-controls": "^10.4.6",
+    "@storybook/react-native": "^10.4.6",
+    "@storybook/react-native-ui-lite": "^10.4.6",
+    "@testing-library/react-native": "^13.3.3",
+    "@types/jest": "29.5.14",
+    "@types/react": "~19.2.2",
+    "cross-env": "^10.1.0",
+    "eslint": "^9.0.0",
+    "eslint-config-expo": "~56.0.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "husky": "^9.1.7",
+    "jest": "~29.7.0",
+    "jest-expo": "~56.0.5",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.4",
+    "storybook": "^10.4.6",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "jest --watchAll=false",
+    "test:watch": "jest --watchAll",
+    "set-storybook-main": "cross-env EXPO_PUBLIC_STORYBOOK=true node scripts/set-package-json-main.js",
+    "lint": "expo lint",
+    "lint:fix": "npx expo lint --fix",
+    "storybook:web": "npm run set-storybook-main && npx expo start --web",
+    "storybook:android": "npm run set-storybook-main && npx expo start --android",
+    "storybook:ios": "npm run set-storybook-main && npx expo start --ios",
+    "build": "cross-env EXPO_PUBLIC_STORYBOOK=false node scripts/set-package-json-main.js && tsc -p tsconfig.json",
+    "prepare": "husky",
+    "format": "prettier --write .",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish",
+    "version-check": "changeset status --since=origin/develop",
+    "changeset:empty": "npx changeset add --empty"
+  },
+  "files": [
+    "dist",
+    "src",
+    "!src/app",
+    "!src/__tests__",
+    "!src/**/**/*.test",
+    "!src/**/**/*.spec"
+  ],
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "private": false
+}
