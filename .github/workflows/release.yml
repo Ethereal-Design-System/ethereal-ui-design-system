@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.BOT_GITHUB_TOKEN  }}
       - name: Setup Environment
-        uses: ./.github/actions/setup-enviroment/action.yml
+        uses: ./.github/actions/setup-enviroment
 
       - name: Build
         run: npm run build
