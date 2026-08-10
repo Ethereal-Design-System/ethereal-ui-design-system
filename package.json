@@ -1,7 +1,7 @@
 {
   "name": "@ethereal-design/ui-design-system",
   "main": "dist/index.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "dependencies": {
     "@babel/core": "^7.29.7",
     "@ethereal-design/ui-design-tokens": "^0.1.0",
