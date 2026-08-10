@@ -10,6 +10,7 @@ on:
       - '.vscode/**'
       - '.github/workflows/**'
       - '.gitignore'
+      - '.husky/**'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 permissions:
