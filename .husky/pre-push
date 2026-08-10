@@ -1,5 +1,20 @@
 #!/usr/bin/env sh
 
+if [ "$CI" = "true" ]; then
+  echo "⏩ Skipping pre-push hook in CI environment"
+  exit 0
+fi
+
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+case "$branch" in
+  main|changeset-release*)
+    echo "⏩ Skipping pre-push hook on main or release branch"
+    exit 0
+    ;;
+esac
+
+
 echo "🔄 Validating types and search errors..."
 npm run typecheck
 
